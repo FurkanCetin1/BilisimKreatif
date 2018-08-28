@@ -3,7 +3,43 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilisimKreatif.Model", "BilisimKreatif.Model\BilisimKreatif.Model.csproj", "{BAC5B5B8-47EE-46B2-8387-B42B53A04A30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilisimKreatif.Data", "BilisimKreatif.Data\BilisimKreatif.Data.csproj", "{F17554A0-98C8-4FF5-8721-D598BFFCAB0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilisimKreatif.Service", "BilisimKreatif.Service\BilisimKreatif.Service.csproj", "{9083B578-5025-4E01-A32D-A1A1D3E01E0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilisimKreatif.Admin", "BilisimKreatif.Admin\BilisimKreatif.Admin.csproj", "{ADE2EE24-E147-4093-8D0F-82A7921414CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilisimKreatif.Api", "BilisimKreatif.Api\BilisimKreatif.Api.csproj", "{B8EBF719-E8E0-43AB-84E2-A503C022CEEC}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAC5B5B8-47EE-46B2-8387-B42B53A04A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC5B5B8-47EE-46B2-8387-B42B53A04A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC5B5B8-47EE-46B2-8387-B42B53A04A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC5B5B8-47EE-46B2-8387-B42B53A04A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F17554A0-98C8-4FF5-8721-D598BFFCAB0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F17554A0-98C8-4FF5-8721-D598BFFCAB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F17554A0-98C8-4FF5-8721-D598BFFCAB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F17554A0-98C8-4FF5-8721-D598BFFCAB0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9083B578-5025-4E01-A32D-A1A1D3E01E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9083B578-5025-4E01-A32D-A1A1D3E01E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9083B578-5025-4E01-A32D-A1A1D3E01E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9083B578-5025-4E01-A32D-A1A1D3E01E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE2EE24-E147-4093-8D0F-82A7921414CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE2EE24-E147-4093-8D0F-82A7921414CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE2EE24-E147-4093-8D0F-82A7921414CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE2EE24-E147-4093-8D0F-82A7921414CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8EBF719-E8E0-43AB-84E2-A503C022CEEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8EBF719-E8E0-43AB-84E2-A503C022CEEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8EBF719-E8E0-43AB-84E2-A503C022CEEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8EBF719-E8E0-43AB-84E2-A503C022CEEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

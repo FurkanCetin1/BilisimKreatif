@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BilisimKreatif.Data\BilisimKreatif.Data.csproj" />
+    <ProjectReference Include="..\BilisimKreatif.Model\BilisimKreatif.Model.csproj" />
+  </ItemGroup>
+
+</Project>
