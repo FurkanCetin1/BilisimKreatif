@@ -23,7 +23,7 @@
                 <td>@item.FullName</td>
                 <td>@item.Phone</td>
                 <td>@item.Email</td>
-                <td></td>
+                <td><a asp-action="Edit" class="btn btn-sm btn-success" asp-route-id="@item.Id">Düzenle</a> <a asp-action="Delete" class="btn btn-sm btn-danger" asp-route-id="@item.Id" onclick="return confirm('Bu kaydı silmek istediğinize emin misiniz?');">Sil</a></td>
             </tr>
         }
     </tbody>

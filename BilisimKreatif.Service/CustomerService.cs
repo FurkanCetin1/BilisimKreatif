@@ -22,6 +22,13 @@ namespace BilisimKreatif.Service
            await unitOfWork.SaveChangesAsync();
         }
 
+        public async Task DeleteAsync(string id)
+        {
+            var entity = await customerRepository.GetAsync(id);
+            customerRepository.Delete(entity);
+            await unitOfWork.SaveChangesAsync();
+        }
+
         public async Task<Customer> GetAsync(string id)
         {
             return await customerRepository.GetAsync(id);
@@ -57,6 +64,7 @@ namespace BilisimKreatif.Service
         Task InsertAsync(Customer entity);
         Task UpdateAsync(Customer entity);
         Task DeleteAsync(Customer entity);
+        Task DeleteAsync(string id);
         Task<bool> AnyAsync(string id);
     }
 }

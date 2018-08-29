@@ -48,5 +48,39 @@ namespace BilisimKreatif.Admin.Controllers
             }
             return View(customerVM);
         }
+
+        public async Task<IActionResult> Edit(string id)
+        {
+            var customer = await customerService.GetAsync(id);
+            var customerVM = mapper.Map<CustomerViewModel>(customer);
+            return View(customerVM);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(CustomerViewModel customerVM)
+        {
+            if (ModelState.IsValid)
+            {
+                var customer = await customerService.GetAsync(customerVM.Id);
+                mapper.Map(customerVM, customer, typeof(CustomerViewModel), typeof(Customer));
+                try
+                {
+                    await customerService.UpdateAsync(customer);
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("Exception", "Kayıt işlemi sırasında beklenmeyen bir hata oluştu; durumu sistem yöneticisine bildiriniz.");
+                    return View(customerVM);
+                }
+                return RedirectToAction("Index");
+            }
+            return View(customerVM);
+        }
+
+        public async Task<IActionResult> Delete(string id)
+        {
+            await customerService.DeleteAsync(id);
+            return RedirectToAction("Index");
+        }
     }
 }
