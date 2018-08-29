@@ -1,0 +1,29 @@
+﻿@model IEnumerable<BilisimKreatif.Model.Product>
+@{
+    ViewData["Title"] = "Ürünler ve Hizmetler";
+}
+
+<h2>Ürünler ve Hizmetler</h2>
+<p>
+    <a asp-action="Create" class="btn btn-sm btn-primary">Yeni Ürün veya Hizmet</a>
+</p>
+<table class="table table-hover table-striped" id="tblRecords">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Fiyat</th>
+            <th>Eylemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>₺@item.Price</td>
+                <td><a asp-action="Edit" class="btn btn-sm btn-success" asp-route-id="@item.Id">Düzenle</a> <a asp-action="Delete" class="btn btn-sm btn-danger" asp-route-id="@item.Id" onclick="return confirm('Bu kaydı silmek istediğinize emin misiniz?');">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
