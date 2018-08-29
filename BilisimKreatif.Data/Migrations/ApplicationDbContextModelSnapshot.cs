@@ -28,15 +28,21 @@ namespace BilisimKreatif.Data.Migrations
 
                     b.Property<string>("CreatedBy");
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .HasMaxLength(200);
 
-                    b.Property<string>("FirstName");
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(200);
 
                     b.Property<string>("IPAddress");
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(200);
 
-                    b.Property<string>("Phone");
+                    b.Property<string>("Phone")
+                        .HasMaxLength(200);
 
                     b.Property<DateTime>("UpdatedAt");
 
