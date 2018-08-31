@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Kullanıcılar</h2>
+<table class="table" id="tblRecords">
+    <thead>
+        <tr>
+            <th class="all">Kullanıcı Adı</th>
+            <th>E-posta</th>
+            <th>E-posta Doğrulandı Mı?</th>
+            <th>Telefon</th>
+            <th>Telefon Doğrulandı Mı?</th>
+            <th>Kilitlenebilir Mi?</th>
+            <th>Hatalı Erişim Sayısı</th>
+            <th>Kilit Bitiş</th>
+            <th class="all">Eylemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td>@(item.EmailConfirmed ? "Evet" : "Hayır")</td>
+                <td>@item.PhoneNumber</td>
+                <td>@(item.PhoneNumberConfirmed ? "Evet" : "Hayır")</td>
+                <td>@(item.LockoutEnabled ? "Evet" : "Hayır")</td>
+                <td>@item.AccessFailedCount</td>
+                <td>@item.LockoutEnd</td>
+                <td class="text-nowrap">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-success">Düzenle</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger" onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

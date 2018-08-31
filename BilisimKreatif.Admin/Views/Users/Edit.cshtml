@@ -1,0 +1,56 @@
+﻿@model Microsoft.AspNetCore.Identity.IdentityUser
+@{
+    ViewData["Title"] = "Kullanıcı Düzenle";
+}
+
+<h2>Kullanıcı Düzenle</h2>
+<form asp-action="Edit">
+    <input asp-for="Id" type="hidden" />
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label asp-for="UserName" class="control-label col-md-2">Kullanıcı Adı</label>
+            <div class="col-md-10">
+                <input asp-for="UserName" class="form-control" disabled />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="control-label col-md-2">E-Mail</label>
+            <div class="col-md-10">
+                <input asp-for="Email" class="form-control" disabled />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <fieldset>
+                    <legend>Parolayı Değiştir</legend>
+                    <div class="form-group">
+                        <label for="CurrentPassword" class="control-label col-md-2">Mevcut Parola</label>
+                        <div class="col-md-10">
+                            <input name="CurrentPassword" class="form-control" type="password" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="NewPassword" class="control-label col-md-2">Yeni Parola</label>
+                        <div class="col-md-10">
+                            <input name="NewPassword" class="form-control" type="password" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="PasswordConfirm" class="control-label col-md-2">Parola Doğrula</label>
+                        <div class="col-md-10">
+                            <input name="PasswordConfirm" class="form-control" type="password" />
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <button type="submit" class="btn btn-sm btn-primary">Kaydet</button>
+                <a asp-action="Index" class="btn btn-sm btn-danger">İptal</a>
+            </div>
+        </div>
+    </div>
+</form>
+
