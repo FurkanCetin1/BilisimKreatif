@@ -47,6 +47,7 @@ namespace BilisimKreatif.Admin
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IProposalService, ProposalService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
