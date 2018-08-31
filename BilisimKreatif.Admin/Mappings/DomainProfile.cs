@@ -17,6 +17,8 @@ namespace BilisimKreatif.Admin.Mappings
 
             CreateMap<Product, ProductViewModel>();
             CreateMap<ProductViewModel, Product>();
+
+            CreateMap<Proposal, ProposalViewModel>();
             CreateMap<ProposalViewModel, Proposal>();
         }
         
