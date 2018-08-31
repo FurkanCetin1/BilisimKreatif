@@ -12,12 +12,15 @@ namespace BilisimKreatif.Data
 
         public DbSet<BilisimKreatif.Model.Customer> Customers { get; set; }
         public DbSet<BilisimKreatif.Model.Product> Products { get; set; }
+        public DbSet<BilisimKreatif.Model.Proposal> Proposals { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             new Maps.CustomerMap(modelBuilder.Entity<Customer>());
             new Maps.ProductMap(modelBuilder.Entity<Product>());
+            new Maps.ProposalMap(modelBuilder.Entity<Proposal>());
         }
     }
 

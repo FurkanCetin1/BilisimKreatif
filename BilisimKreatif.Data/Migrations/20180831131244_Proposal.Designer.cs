@@ -4,14 +4,16 @@ using BilisimKreatif.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BilisimKreatif.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180831131244_Proposal")]
+    partial class Proposal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -87,14 +89,6 @@ namespace BilisimKreatif.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Authorize")
-                        .IsRequired()
-                        .HasMaxLength(200);
-
-                    b.Property<string>("CompanyName")
-                        .IsRequired()
-                        .HasMaxLength(200);
-
                     b.Property<DateTime>("CreatedAt");
 
                     b.Property<string>("CreatedBy");
@@ -102,12 +96,18 @@ namespace BilisimKreatif.Data.Migrations
                     b.Property<string>("Email")
                         .HasMaxLength(200);
 
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(200);
+
                     b.Property<string>("IPAddress");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(200);
 
                     b.Property<string>("Phone")
                         .HasMaxLength(200);
-
-                    b.Property<string>("ProposalContext");
 
                     b.Property<DateTime>("UpdatedAt");
 
