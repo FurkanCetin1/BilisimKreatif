@@ -10,6 +10,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BilisimKreatif.Data\BilisimKreatif.Data.csproj" />
+    <ProjectReference Include="..\BilisimKreatif.Model\BilisimKreatif.Model.csproj" />
+    <ProjectReference Include="..\BilisimKreatif.Service\BilisimKreatif.Service.csproj" />
   </ItemGroup>
 
 </Project>

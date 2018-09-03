@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BilisimKreatif.Admin.Models;
+using BilisimKreatif.Service;
+using System.Net.Http;
+using BilisimKreatif.Model;
 
 namespace BilisimKreatif.Admin.Controllers
 {
@@ -14,7 +17,25 @@ namespace BilisimKreatif.Admin.Controllers
         {
             return View();
         }
+        [Route("servis-denemesi")]
+        public async Task<IActionResult> Test()
+        {
+            // C# ile web api çağırıyoruz...
+            var client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync("http://localhost:49479/api/customers");
+            IEnumerable<Customer> customers = new List<Customer>();
+            if (response.IsSuccessStatusCode)
+            {
+                customers = await response.Content.ReadAsAsync<IEnumerable<Customer>>();
+            }
+            
+            return View(customers);
+        }
 
+        public IActionResult Test2()
+        {
+            return View();
+        }
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Test2";
+}
+
+<h2>Test2</h2>
+<p id="records"></p>
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $.get("http://localhost:49479/api/customers", function (result) { 
+                $.each(result, function (index, value) { 
+                    $("#records").append((index + 1).toString() + ". " + value.firstName + " " + value.lastName + "<br />");
+                });
+            });
+        });
+    </script>
+}
+

@@ -1,0 +1,11 @@
+﻿@model IEnumerable<BilisimKreatif.Model.Customer>
+@{
+    ViewData["Title"] = "Test";
+}
+
+<h2>Test</h2>
+@foreach (var item in Model)
+{
+    @item.FirstName @item.LastName<br />
+}
+
