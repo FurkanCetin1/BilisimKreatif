@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Test3";
+}
+
+<h2>Test3</h2>
+
+$<input id="inputNumber" type="number" class="form-control" /> <button onclick="callApi()">Kur Bilgisi Getir</button><span id="result" class="text-danger"></span> <span class="text-danger">BTC</span>
+@section scripts {
+    <script>
+        function callApi() {
+            var num = $("#inputNumber").val();
+            $.get("https://blockchain.info/tobtc?currency=USD&value=" + num, function (data) {
+                $("#result").html(data);
+            });
+        }
+    </script>
+}

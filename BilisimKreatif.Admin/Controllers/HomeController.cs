@@ -36,6 +36,29 @@ namespace BilisimKreatif.Admin.Controllers
         {
             return View();
         }
+
+        public IActionResult Test3()
+        {
+            return View();
+        }
+
+        public IActionResult Test4()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> CallApi(int inputNumber)
+        {
+            // C# ile web api çağırıyoruz...
+            var client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync("https://blockchain.info/tobtc?currency=USD&value=" + inputNumber.ToString());
+            string result = "";
+            if (response.IsSuccessStatusCode)
+            {
+                result = await response.Content.ReadAsStringAsync();
+            }
+            return View("CallApi",model:result);
+        }
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
